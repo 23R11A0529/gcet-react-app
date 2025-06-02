@@ -16,7 +16,7 @@ export default function Product() {
     <div>
       <h3>Welcome {user.name}! </h3>
       Product List
-      {products && products.map((value) => <li>{value.name}</li>)}
+      {products && products.map((value) => <li>{value.name}</li>,<li>{value.price}</li>)}
     </div>
   );
 }
