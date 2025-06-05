@@ -14,7 +14,9 @@ export default function Login() {
     // );
     const url = `${API}/users/login`;
     const found = await axios.post(url, user);
-    if (found.data) {
+    console.log(found)
+
+    if (found.data.email) {
       setUser(found.data);
       Navigate("/");
     } else {
