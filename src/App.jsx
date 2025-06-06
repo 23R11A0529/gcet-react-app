@@ -8,7 +8,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
 import Header from "./components/Header";
-import Order from "./components/Order";
+import order from "./components/Order";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createContext } from "react";
