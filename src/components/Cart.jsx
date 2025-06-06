@@ -64,12 +64,12 @@ const Navigate = useNavigate()
             )
         )}
       <hr />
-      <h3>Order Value:{orderValue}</h3>
+      <h3>order Value:{orderValue}</h3>
       <hr />
       {user.name ? (
-        <button onClick={placeOrder}>Place Order</button>
+        <button onClick={placeOrder}>Place order</button>
       ) : (
-        <button onClick={loginToOrder}>Login to Order</button>
+        <button onClick={loginToOrder}>Login to order</button>
       )}
       <hr />
     </div>
