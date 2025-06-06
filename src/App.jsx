@@ -8,7 +8,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
 import Header from "./components/Header";
-import order from "./components/order";
+import Order from "./components/order";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { createContext } from "react";
@@ -39,7 +39,7 @@ function App() {
             <Route path="/" element={<Product />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/login" element={<Login />}></Route>
-             <Route path="/order" element={<order />}></Route>
+             <Route path="/order" element={<Order />}></Route>
             <Route path="/logout" element={<Logout />}></Route>
             <Route path="/register" element={<Register />}></Route>
           </Routes>
