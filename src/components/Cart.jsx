@@ -14,17 +14,26 @@ const Navigate = useNavigate()
         return sum + value.price * (cart[value.pid] ?? 0);
       }, 0)
     );
-  }, []);
+  }, [cart,products]);
 
   const increment = (id) => {
-    alert(id);
+    /*alert(id);
     cart[id] = cart[id] + 1;
-    console.log(cart);
+    console.log(cart);*/
+    const newCart = { ...cart, [id]: (cart[id] || 0) + 1 };
+    setCart(newCart);
   };
   const decrement = (id) => {
-    alert(id);
+    /*alert(id);
     cart[id] = cart[id] - 1;
-    console.log(cart);
+    console.log(cart);*/
+    const newCount = (cart[id] || 0) - 1;
+    if (newCount <= 0) {
+      const { [id]: _, ...newCart } = cart;
+      setCart(newCart);
+    } else {
+      setCart({ ...cart, [id]: newCount });
+    }
   };
 
   const placeOrder = async () => {
