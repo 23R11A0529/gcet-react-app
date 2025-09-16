@@ -8,16 +8,16 @@ export default function Login() {
   const [msg, setMsg] = useState();
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     // const found = users.find(
     //   (value) => value.email === user.email && value.pass === user.pass
     // );
+    e.preventDefault();
     const url = `${API}/users/login`;
     const found = await axios.post(url, user);
-    console.log(found)
 
-    if (found.data.email) {
-      setUser(found.data);
+    if (found.data.token) {
+      setUser({ ...found.data.result, token: found.data.token });
       Navigate("/");
     } else {
       setMsg("Invalid User or Password");
@@ -29,7 +29,7 @@ export default function Login() {
   };
 
   return (
-    <div style={{ margin: "30px" }}>
+    <div className="auth-form">
       <h3>Login</h3>
       {msg}
       <p>
@@ -46,9 +46,13 @@ export default function Login() {
           onChange={(e) => setUser({ ...user, pass: e.target.value })}
         />
       </p>
-      <button onClick={handleSubmit}>Submit</button>
+      <button type="button" onClick={handleSubmit}>
+        Submit
+      </button>
       <p>
-        <button onClick={goToRegister}>Create Account</button>
+        <button type="button" onClick={goToRegister}>
+          Create Account
+        </button>
       </p>
     </div>
   );
