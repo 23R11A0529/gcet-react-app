@@ -8,6 +8,7 @@ export default function Register() {
   const [user, setUser] = useState({});
   const Navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
+
   const handleSubmit = async () => {
     //setUsers([...users, user]);
     try {
@@ -18,9 +19,11 @@ export default function Register() {
       console.log(err);
     }
   };
+
   return (
-    <div style={{ margin: "30px" }}>
+    <div className="auth-form">
       <h3>Register</h3>
+
       <p>
         <input
           type="text"
@@ -43,6 +46,7 @@ export default function Register() {
         />
       </p>
       <button onClick={handleSubmit}>Submit</button>
+
       <hr />
       {users &&
         users.map((value) => (
