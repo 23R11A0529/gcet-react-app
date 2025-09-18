@@ -37,7 +37,7 @@ function App() {
           <Header />
           <Routes>
             <Route index element={<Product />} />
-            <Route path="/" element={<Product />}></Route>
+            <Route path="/product" element={<Product />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/order" element={<Order />}></Route>
